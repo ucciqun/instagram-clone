@@ -34,11 +34,13 @@ function Post({ icon, user, pic, fav, comment }) {
           <BookmarkBorderOutlinedIcon />
         </IconButton>
       </div>
-      <p>
-        <span style={{ fontWeight: "bold" }}>{user}</span>
+      <p className="post__comment">
+        <span style={{ fontWeight: "bold" }}>
+          {user}
+          {"  "}
+        </span>
         {comment}
       </p>
-      <h2>this is post</h2>
     </div>
   );
 }

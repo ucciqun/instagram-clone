@@ -1,6 +1,12 @@
+.post {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
 .post__header {
   display: flex;
   align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .post__icon {
   border-radius: 50%;
@@ -22,4 +28,8 @@
 }
 .post__iconContainer {
   display: flex;
+}
+.post__comment {
+  padding-left: 15px;
+  padding-right: 15px;
 }
