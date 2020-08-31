@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.css";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import AccountIcon from "./AccountIcon";
 
 import HomeOutlinedIcon from "@material-ui/icons/HomeOutlined";
@@ -10,9 +10,11 @@ import AddBoxOutlinedIcon from "@material-ui/icons/AddBoxOutlined";
 import AddBoxIcon from "@material-ui/icons/AddBox";
 import FavoriteBorderOutlinedIcon from "@material-ui/icons/FavoriteBorderOutlined";
 import FavoriteIcon from "@material-ui/icons/Favorite";
+import { Button } from "@material-ui/core";
 
 function Footer() {
   const history = useHistory();
+  const location = useLocation();
   const items = [
     {
       iconOutline: HomeOutlinedIcon,
@@ -35,15 +37,23 @@ function Footer() {
       link: "/activity",
     },
     {
-      iconOutline: "",
-      iconFilled: "",
-      link: "profile",
+      iconOutline: AccountIcon,
+      iconFilled: AccountIcon,
+      link: "/profile",
     },
   ];
+  console.log(location);
   return (
     <div className="footer">
-      <h1>THIS IS FOOTER</h1>
-      <AccountIcon active={true} style={{ width: 60, height: 60 }} />
+      {items.map((e) => (
+        <Button onClick={() => history.push(e.link)} style={{ width: "20%" }}>
+          {location.pathname === e.link ? (
+            <e.iconFilled style={{ width: 40, height: 40 }} />
+          ) : (
+            <e.iconOutline style={{ width: 40, height: 40 }} />
+          )}
+        </Button>
+      ))}
     </div>
   );
 }
