@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Story.css";
+import { User } from "./App";
 
 function Story() {
+  const [account, setAccount] = useContext(User);
   const stories = [
     {
       image:
@@ -30,13 +32,13 @@ function Story() {
     {
       image:
         "https://th.bing.com/th/id/OIP.aHp76N635ENUcRETA5bilAHaFj?pid=Api&rs=1",
-      name: "strawberry",
+      name: "strawberrrrrrrrrrrrrry",
       active: false,
     },
     {
       image:
         "https://th.bing.com/th/id/OIP.aHp76N635ENUcRETA5bilAHaFj?pid=Api&rs=1",
-      name: "strawberry",
+      name: "s",
       active: true,
     },
     {
@@ -55,10 +57,11 @@ function Story() {
   return (
     <div className="story">
       <div className="story__container">
-        {stories.map((e) => (
-          <div className="story__item">
+        {stories.concat(account).map((e) => (
+          <div className="story__item" key={e.image}>
             <div
               style={{
+                margin: "0 auto",
                 width: 60,
                 height: 60,
                 borderRadius: 50,

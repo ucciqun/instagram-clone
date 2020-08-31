@@ -12,11 +12,9 @@
   display: flex;
 }
 .story__item {
-  display: block;
-  flex-direction: column;
-  text-align: center;
   margin-left: 15px;
   margin-right: 15px;
+  text-align: center;
 }
 .story__image {
   height: 50px;

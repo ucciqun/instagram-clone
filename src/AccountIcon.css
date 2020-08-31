@@ -1,0 +1,14 @@
+.accountIcon {
+  border-radius: 50%;
+  text-align: center;
+  background-color: gray;
+}
+.accountIcon__img {
+  object-fit: cover;
+  border-radius: 50%;
+  width: 80%;
+  height: 80%;
+  padding: 5%;
+  background-color: white;
+  margin-top: 5%;
+}
