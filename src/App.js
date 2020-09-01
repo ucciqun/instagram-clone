@@ -6,6 +6,7 @@ import Header from "./Header";
 import Story from "./Story";
 import Feed from "./Feed";
 import Footer from "./Footer";
+import Profile from "./Profile";
 import { Divider } from "@material-ui/core";
 
 export const User = createContext();
@@ -28,6 +29,9 @@ function App() {
             <Story />
             <Divider />
             <Feed />
+          </Route>
+          <Route exact path="/profile">
+            <Profile />
           </Route>
           <Footer />
         </Router>
