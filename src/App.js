@@ -7,6 +7,8 @@ import Story from "./Story";
 import Feed from "./Feed";
 import Footer from "./Footer";
 import Profile from "./Profile";
+import AuthProvider from "./AuthProvider";
+
 import { Divider } from "@material-ui/core";
 
 export const User = createContext();
@@ -19,24 +21,26 @@ function App() {
     active: true,
   });
   return (
-    <div className="App">
-      <h1>REACT INSTAGRAM-CLOOOOOONE</h1>
-      <User.Provider value={[account, setAccount]}>
-        <Router>
-          <Header />
-          <Divider />
-          <Route exact path="/">
-            <Story />
+    <AuthProvider>
+      <div className="App">
+        <h1>REACT INSTAGRAM-CLOOOOOONE</h1>
+        <User.Provider value={[account, setAccount]}>
+          <Router>
+            <Header />
             <Divider />
-            <Feed />
-          </Route>
-          <Route exact path="/profile">
-            <Profile />
-          </Route>
-          <Footer />
-        </Router>
-      </User.Provider>
-    </div>
+            <Route exact path="/">
+              <Story />
+              <Divider />
+              <Feed />
+            </Route>
+            <Route exact path="/profile">
+              <Profile />
+            </Route>
+            <Footer />
+          </Router>
+        </User.Provider>
+      </div>
+    </AuthProvider>
   );
 }
 

@@ -57,8 +57,8 @@ function Story() {
   return (
     <div className="story">
       <div className="story__container">
-        {stories.concat(account).map((e) => (
-          <div className="story__item" key={e.image}>
+        {stories.concat(account).map((e, index) => (
+          <div className="story__item" key={index}>
             <div
               style={{
                 margin: "0 auto",
